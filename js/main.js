@@ -4,10 +4,28 @@ import { createArticleCard, formatDate, paginate } from './utils.js';
 
 //Глобальные переменные
 let currentPage = 1;
-const articlesPerPage = 9;
+let articlesPerPage
+
+function determineArticlesPerPage() {
+  if (window.innerWidth >= 964 && window.innerWidth <= 1281) {
+    articlesPerPage = 9;
+  } else {
+    articlesPerPage = 8;
+  }
+}
+
+window.addEventListener('resize', () => {
+  const old = articlesPerPage;
+  determineArticlesPerPage();
+  if (articlesPerPage !== old) {
+    currentPage = 1;
+    render();
+  }
+});
 
 //Инициализация
 async function init() {
+  determineArticlesPerPage(); // установить количество статей до рендера
   const loaded = await loadArticles();
   if (!loaded.length) {
     document.getElementById('newsContainer').innerHTML =

@@ -143,7 +143,7 @@ header {
 .news-grid,
 #newsContainer {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
     gap: 30px;
     margin-bottom: 40px;
 }
