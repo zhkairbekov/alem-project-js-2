@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space News Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="header-title">🚀 Space News Dashboard</h1>
+            <p class="header-subtitle">Ваш личный центр космических новостей</p>
+            <button id="toggle-source">Источник: API</button>
+        </header>
+
+        <div class="controls">
+            <div class="controls-row">
+                <div class="search-box">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Поиск новостей...">
+                    <span class="search-icon">🔍</span>
+                </div>
+                <div class="select-box">
+                    <select id="sortSelect" class="select">
+                        <option value="date-desc">Новые сначала</option>
+                        <option value="date-asc">Старые сначала</option>
+                        <option value="title-asc">По названию А-Я</option>
+                        <option value="title-desc">По названию Я-А</option>
+                    </select>
+                </div>
+                <div class="select-box">
+                    <select id="sourceFilter" class="select">
+                        <option value="">Все источники</option>
+                    </select>
+                </div>
+            </div>
+            <div class="stats">
+                <span id="statsText">Загрузка новостей...</span>
+                <span id="pageInfo"></span>
+            </div>
+        </div>
+
+        <div id="newsContainer">
+            <div class="loading">Загружаем космические новости...</div>
+        </div>
+
+        <div class="pagination" id="pagination"></div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" id="modalClose">&times;</span>
+            <img id="modalImage" class="modal-image" src="" alt="">
+            <h2 id="modalTitle" class="modal-title"></h2>
+            <div class="modal-meta">
+                <span id="modalSource" class="modal-source"></span>
+                <span id="modalDate" class="modal-date"></span>
+            </div>
+            <p id="modalSummary" class="modal-summary"></p>
+            <a id="modalLink" class="modal-link" href="" target="_blank">Читать полную статью</a>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
