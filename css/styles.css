@@ -467,3 +467,14 @@ header {
     border-color: #4ecdc4;
     box-shadow: 0 0 20px rgba(78, 205, 196, 0.3);
 }
+
+footer .container{
+    text-align: center;
+}
+
+footer{
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 -8px 0 rgba(0, 0, 0, 0.3);
+}
